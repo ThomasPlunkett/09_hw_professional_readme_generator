@@ -29,9 +29,10 @@ const questions = [
         message: 'description',
     },
     {
-        type: 'input',
+        type: 'list',
         message: 'What kind of license do you want?',
         message: 'license',
+        choices: ['MIT', 'Apache', 'None']
     },
     {
         type: 'input',
