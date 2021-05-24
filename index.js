@@ -62,10 +62,17 @@ function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(questions).then((response) => {
-        console.log(response);
-    })
+    inquirer
+        .prompt(questions)
+        .then((answers) => {
+            const readMeContent = generateMarkdown(answers);
+            console.log('Generating ReadMe...');
+            fs.writeFile('DynamicReadMe.md', readMeContent, (err) =>
+                err ? console.error(err) : console.log("success"))
+        });
+
 }
+
 
 // Function call to initialize app
 init();
