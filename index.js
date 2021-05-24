@@ -5,57 +5,59 @@ const generateMarkdown = require('./utils/generateMarkdown');
 // TODO: Create an array of questions for user input
 // What are the questions that I need?
 // GitHub username, Email, Project name, Short description of project, What kind of license, how to install, how to test, what do users need to know, and contributing.
+// TODO: Create an array of questions for user input
 const questions = [
-    inquirer
-  .prompt([
     {
-      type: 'input',
-      message: 'What is your GitHub username?',
-      message: 'github?',
+      type: "input",
+      name: "title",
+      message: "What is the title of your project?",
     },
     {
-        type: 'input',
-        message: 'What is your email?',
-        message: 'email',
+      type: "input",
+      name: "description",
+      message:
+        "Please provide a description of your project.  Use the following questions as a guide:  What was your motivation?  Why did you build this project?  What problem does it solve?  What did you learn?  What makes this project stand out?",
     },
     {
-        type: 'input',
-        message: 'What is your Project name?',
-        message: 'project',
+      type: "input",
+      name: "installation",
+      message:
+        "What are the steps needed to install your project?  Please provide a step-by-step description of how to get the development environment running.",
+    },
+  
+    {
+      type: "input",
+      name: "usage",
+      message: "Please provide instructions and examples for use.",
     },
     {
-        type: 'input',
-        message: 'Hw would you describe your project?',
-        message: 'description',
+      type: "input",
+      name: "contributing",
+      message:
+        "List your collaborators, if any, with links to their Github profiles.  If you used any third-party assets that require attribution, please list them.  If you followed tutorials, include links to those here as well.",
     },
     {
-        type: 'list',
-        message: 'What kind of license do you want?',
-        message: 'license',
-        choices: ['MIT', 'Apache', 'None']
+      type: "input",
+      name: "test",
+      message: "What tests can your users use to run your applications?",
     },
     {
-        type: 'input',
-        message: 'How is your project installed?',
-        message: 'installation',
+      type: "input",
+      name: "userName",
+      message: "What is your GitHub username?",
     },
     {
-        type: 'input',
-        message: 'How is your project tested?',
-        message: 'test',
+      type: "email",
+      name: "email",
+      message: "What is your email address?",
     },
     {
-        type: 'input',
-        message: 'What do users need to know about your project?',
-        message: 'information',
+      type: "list",
+      message: "Which license would you like to provide to share your work?",
+      name: "license",
+      choices: ["Apache 2.0 License", "MIT", "No License"],
     },
-    {
-        type: 'input',
-        message: 'Who is contributing to your project?',
-        message: 'contributions',
-    },
-  ])
-];
+  ];
 
 
 // TODO: Create a function to initialize app
